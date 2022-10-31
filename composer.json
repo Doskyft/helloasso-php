@@ -1,0 +1,29 @@
+{
+    "name": "doskyft/helloasso-php",
+    "description": "Helloasso PHP Library",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "helloasso",
+        "api",
+        "organization"
+    ],
+    "require": {
+        "php": ">=8.1",
+        "symfony/http-client": "^6.1",
+        "symfony/http-foundation": "^6.1",
+        "symfony/http-kernel": "^6.1",
+        "symfony/serializer": "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Helloasso\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Doskyft",
+            "email": "doskyft@gmail.com"
+        }
+    ]
+}
