@@ -16,8 +16,9 @@ class HelloassoClient
         readonly string $clientId,
         readonly string $clientSecret,
         readonly string $organizationSlug,
+        readonly bool $sandbox = false,
     ) {
-        $this->checkout = new CheckoutIntentService($clientId, $clientSecret, $organizationSlug);
-        $this->directory = new DirectoryService($clientId, $clientSecret, $organizationSlug);
+        $this->checkout = new CheckoutIntentService($clientId, $clientSecret, $organizationSlug, $sandbox);
+        $this->directory = new DirectoryService($clientId, $clientSecret, $organizationSlug, $sandbox);
     }
 }

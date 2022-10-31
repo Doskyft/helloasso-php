@@ -18,8 +18,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 abstract class ApiRequest
 {
-    public const BASE_URL = 'https://api.helloasso.com';
-    public const OAUTH_ENDPOINT = self::BASE_URL.'/oauth2';
+    public const OAUTH_ENDPOINT = '/oauth2';
 
     protected Serializer $serializer;
 
@@ -27,8 +26,18 @@ abstract class ApiRequest
         private readonly string $clientId,
         private readonly string $clientSecret,
         protected readonly string $organizationSlug,
+        private readonly bool $sandbox = false,
     ) {
         $this->serializer = (new Serializer([new ObjectNormalizer()], [new JsonEncoder()]));
+    }
+
+    protected function getBaseUrl(): string
+    {
+        if ($this->sandbox) {
+            return 'https://api.helloasso-sandbox.com';
+        }
+
+        return 'https://api.helloasso.com';
     }
 
     protected function deserialize(string $content, string $type): HelloassoObject
@@ -87,7 +96,7 @@ abstract class ApiRequest
             ]
         ];
 
-        $request = $this->request(Request::METHOD_POST, self::OAUTH_ENDPOINT.'/token', $params);
+        $request = $this->request(Request::METHOD_POST, $this->getBaseUrl().self::OAUTH_ENDPOINT.'/token', $params);
 
         /** @var ClientCredentials $content */
         $content = $this->deserialize($this->getContent($request), ClientCredentials::class);
