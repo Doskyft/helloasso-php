@@ -1,8 +1,11 @@
 <?php
 
-namespace Helloasso\Object;
+namespace Helloasso\Models\Carts;
 
-class Payer implements HelloassoObject
+use DateTime;
+use Helloasso\Models\HelloassoObject;
+
+class CheckoutPayer implements HelloassoObject
 {
     /**
      * Prénom du payeur
@@ -28,7 +31,7 @@ class Payer implements HelloassoObject
     /**
      * Date de naissance du payeur
      */
-    private ?\DateTime $dateOfBirth;
+    private ?DateTime $dateOfBirth;
 
     /**
      * Adresse du contributeur
@@ -94,12 +97,12 @@ class Payer implements HelloassoObject
         return $this;
     }
 
-    public function getDateOfBirth(): ?\DateTime
+    public function getDateOfBirth(): ?DateTime
     {
         return $this->dateOfBirth;
     }
 
-    public function setDateOfBirth(?\DateTime $dateOfBirth): self
+    public function setDateOfBirth(?DateTime $dateOfBirth): self
     {
         $this->dateOfBirth = $dateOfBirth;
 

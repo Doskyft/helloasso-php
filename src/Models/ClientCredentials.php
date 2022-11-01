@@ -1,6 +1,6 @@
 <?php
 
-namespace Helloasso\Object;
+namespace Helloasso\Models;
 
 class ClientCredentials implements HelloassoObject
 {

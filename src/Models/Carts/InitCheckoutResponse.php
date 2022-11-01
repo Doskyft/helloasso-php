@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Helloasso\Object;
+namespace Helloasso\Models\Carts;
 
-class CheckoutIntentResponse implements HelloassoObject
+use Helloasso\Models\HelloassoObject;
+
+class InitCheckoutResponse implements HelloassoObject
 {
     /**
      * ID of the checkout intent.

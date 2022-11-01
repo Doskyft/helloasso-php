@@ -1,6 +1,6 @@
 <?php
 
-namespace Helloasso\Object;
+namespace Helloasso\Models;
 
 interface HelloassoObject
 {

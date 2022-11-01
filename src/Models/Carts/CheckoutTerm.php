@@ -1,8 +1,11 @@
 <?php
 
-namespace Helloasso\Object;
+namespace Helloasso\Models\Carts;
 
-class Term implements HelloassoObject
+use DateTime;
+use Helloasso\Models\HelloassoObject;
+
+class CheckoutTerm implements HelloassoObject
 {
     /**
      * Montant de l’échéance (TTC) en centimes.
@@ -14,7 +17,7 @@ class Term implements HelloassoObject
     /**
      * Date de l’échéance.
      */
-    private \DateTime $date;
+    private DateTime $date;
 
     public function getAmount(): int
     {
@@ -28,12 +31,12 @@ class Term implements HelloassoObject
         return $this;
     }
 
-    public function getDate(): \DateTime
+    public function getDate(): DateTime
     {
         return $this->date;
     }
 
-    public function setDate(\DateTime $date): self
+    public function setDate(DateTime $date): self
     {
         $this->date = $date;
 

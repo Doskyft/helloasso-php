@@ -1,8 +1,11 @@
 <?php
 
-namespace Helloasso\Object;
+namespace Helloasso\Models\Carts;
 
-class CheckoutIntent implements HelloassoObject
+use Helloasso\Exception\InvalidValueException;
+use Helloasso\Models\HelloassoObject;
+
+class InitCheckoutBody implements HelloassoObject
 {
     /**
      * Montant total (TTC) du paiement en centimes
@@ -57,14 +60,14 @@ class CheckoutIntent implements HelloassoObject
     private bool $containsDonation = false;
 
     /**
-     * @var array<Term> Tableau contenant les échéances éventuelles
+     * @var array<CheckoutTerm> Tableau contenant les échéances éventuelles
      */
     private ?array $terms;
 
     /**
      * Informations concernant le payeur
      */
-    private ?Payer $payer;
+    private ?CheckoutPayer $payer;
 
     /**
      * @var array<array> Informations partenaire.
@@ -122,8 +125,15 @@ class CheckoutIntent implements HelloassoObject
         return $this->backUrl;
     }
 
+    /**
+     * @throws InvalidValueException
+     */
     public function setBackUrl(string $backUrl): self
     {
+        if (!str_starts_with($backUrl, 'https://')) {
+            throw new InvalidValueException('backUrl doit commencé par "https://"');
+        }
+
         $this->backUrl = $backUrl;
 
         return $this;
@@ -134,8 +144,15 @@ class CheckoutIntent implements HelloassoObject
         return $this->errorUrl;
     }
 
+    /**
+     * @throws InvalidValueException
+     */
     public function setErrorUrl(string $errorUrl): self
     {
+        if (!str_starts_with($errorUrl, 'https://')) {
+            throw new InvalidValueException('errorUrl doit commencé par "https://"');
+        }
+
         $this->errorUrl = $errorUrl;
 
         return $this;
@@ -146,8 +163,15 @@ class CheckoutIntent implements HelloassoObject
         return $this->returnUrl;
     }
 
+    /**
+     * @throws InvalidValueException
+     */
     public function setReturnUrl(string $returnUrl): self
     {
+        if (!str_starts_with($returnUrl, 'https://')) {
+            throw new InvalidValueException('returnUrl doit commencé par "https://"');
+        }
+
         $this->returnUrl = $returnUrl;
 
         return $this;
@@ -165,31 +189,27 @@ class CheckoutIntent implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return array<CheckoutTerm>|null
+     */
     public function getTerms(): ?array
     {
         return $this->terms;
     }
 
-    public function setTerms(?array $terms): self
-    {
-        $this->terms = $terms;
-
-        return $this;
-    }
-
-    public function addTerm(Term $term): self
+    public function addTerm(CheckoutTerm $term): self
     {
         $this->terms[] = $term;
 
         return $this;
     }
 
-    public function getPayer(): ?Payer
+    public function getPayer(): ?CheckoutPayer
     {
         return $this->payer;
     }
 
-    public function setPayer(?Payer $payer): self
+    public function setPayer(?CheckoutPayer $payer): self
     {
         $this->payer = $payer;
 

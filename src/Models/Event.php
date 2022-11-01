@@ -1,6 +1,6 @@
 <?php
 
-namespace Helloasso\Object;
+namespace Helloasso\Models;
 
 class Event implements HelloassoObject
 {
@@ -10,6 +10,8 @@ class Event implements HelloassoObject
     private string $eventType;
 
     private HelloassoObject $data;
+
+    private array $metadata;
 
     public function getEventType(): string
     {
@@ -31,6 +33,18 @@ class Event implements HelloassoObject
     public function setData(HelloassoObject $data): self
     {
         $this->data = $data;
+
+        return $this;
+    }
+
+    public function getMetadata(): array
+    {
+        return $this->metadata;
+    }
+
+    public function setMetadata(array $metadata): self
+    {
+        $this->metadata = $metadata;
 
         return $this;
     }

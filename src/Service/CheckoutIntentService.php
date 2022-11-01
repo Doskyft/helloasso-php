@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Helloasso\Service;
 
 use Helloasso\Exception\HelloassoApiException;
-use Helloasso\Object\CheckoutIntent;
-use Helloasso\Object\CheckoutIntentResponse;
+use Helloasso\Models\Carts\InitCheckoutBody;
+use Helloasso\Models\Carts\InitCheckoutResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class CheckoutIntentService extends ApiRequest
@@ -17,7 +17,7 @@ class CheckoutIntentService extends ApiRequest
     /**
      * @throws HelloassoApiException
      */
-    public function create(CheckoutIntent $checkoutIntent): CheckoutIntentResponse
+    public function create(InitCheckoutBody $checkoutIntent): InitCheckoutResponse
     {
         $params = [
             'auth_bearer' => $this->oauth()->getAccessToken(),
@@ -33,8 +33,8 @@ class CheckoutIntentService extends ApiRequest
             $params
         );
 
-        /** @var CheckoutIntentResponse $content */
-        $content = $this->deserialize($this->getContent($request), CheckoutIntentResponse::class);
+        /** @var InitCheckoutResponse $content */
+        $content = $this->deserialize($this->getContent($request), InitCheckoutResponse::class);
 
         return $content;
     }
@@ -42,15 +42,15 @@ class CheckoutIntentService extends ApiRequest
     /**
      * @throws HelloassoApiException
      */
-    public function retrieve(int $checkoutIntentId): CheckoutIntentResponse
+    public function retrieve(int $checkoutIntentId): InitCheckoutResponse
     {
         $request = $this->request(
             Request::METHOD_GET,
             $this->getBaseUrl() . sprintf(self::RETRIEVE_ENDPOINT, $this->organizationSlug, $checkoutIntentId)
         );
 
-        /** @var CheckoutIntentResponse $content */
-        $content = $this->deserialize($this->getContent($request), CheckoutIntentResponse::class);
+        /** @var InitCheckoutResponse $content */
+        $content = $this->deserialize($this->getContent($request), InitCheckoutResponse::class);
 
         return $content;
     }

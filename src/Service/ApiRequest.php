@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Helloasso\Service;
 
 use Helloasso\Exception\HelloassoApiException;
-use Helloasso\Object\ClientCredentials;
-use Helloasso\Object\HelloassoObject;
+use Helloasso\Models\ClientCredentials;
+use Helloasso\Models\HelloassoObject;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
