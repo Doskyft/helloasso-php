@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Helloasso\Models\Forms;
 
 use Helloasso\Enums\FormState;
-use Helloasso\Enums\FormType;
+use Helloasso\Enums\string;
 use Helloasso\Models\Common\DocumentModel;
 use Helloasso\Models\Common\MetaModel;
 use Helloasso\Models\HelloassoObject;
@@ -27,7 +27,7 @@ class FormLightModel implements HelloassoObject
     private string $widgetVignetteHorizontalUrl;
     private string $widgetVignetteVerticalUrl;
     private string $formSlug;
-    private FormType $formType;
+    private string $formType;
     private string $url;
     private string $organizationSlug;
 
@@ -211,12 +211,12 @@ class FormLightModel implements HelloassoObject
         return $this;
     }
 
-    public function getFormType(): FormType
+    public function getFormType(): string
     {
         return $this->formType;
     }
 
-    public function setFormType(FormType $formType): self
+    public function setFormType(string $formType): self
     {
         $this->formType = $formType;
 

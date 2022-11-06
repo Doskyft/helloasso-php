@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Helloasso\Models\Directory;
 
-use Helloasso\Enums\FormType;
+use Helloasso\Enums\string;
 use Helloasso\Models\HelloassoObject;
 
 class ListFormsRequest implements HelloassoObject
@@ -38,7 +38,7 @@ class ListFormsRequest implements HelloassoObject
     private array $formCountries;
 
     /**
-     * @var array<FormType>
+     * @var array<string>
      */
     private array $formTypes;
 

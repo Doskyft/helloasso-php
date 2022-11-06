@@ -36,8 +36,9 @@ class PaymentDetail implements HelloassoObject
     private PaymentMeans $paymentMeans;
     private PaymentState $state;
     private PaymentType $type;
-    private MetaModel $meta;
     private PaymentOffLineMeansModel $paymentOffLineMean;
+
+    private MetaModel $meta;
 
     public function getId(): int
     {

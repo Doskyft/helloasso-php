@@ -9,7 +9,12 @@ use Helloasso\Models\ClientCredentials;
 use Helloasso\Models\HelloassoObject;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
+use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
+use Symfony\Component\PropertyInfo\PropertyInfoExtractor;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
+use Symfony\Component\Serializer\Normalizer\BackedEnumNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Contracts\HttpClient\Exception\HttpExceptionInterface;
@@ -28,7 +33,15 @@ abstract class ApiRequest
         protected readonly string $organizationSlug,
         private readonly bool $sandbox = false,
     ) {
-        $this->serializer = (new Serializer([new ObjectNormalizer()], [new JsonEncoder()]));
+        $encoder = [new JsonEncoder()];
+        $extractor = new PropertyInfoExtractor([], [new PhpDocExtractor(), new ReflectionExtractor()]);
+        $normalizer = [
+            new BackedEnumNormalizer(),
+            new ArrayDenormalizer(),
+            new ObjectNormalizer(null, null, null, $extractor),
+        ];
+
+        $this->serializer = new Serializer($normalizer, $encoder);
     }
 
     protected function getBaseUrl(): string

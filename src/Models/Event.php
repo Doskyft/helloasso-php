@@ -8,6 +8,10 @@ use Helloasso\Models\Statistics\PaymentDetail;
 
 class Event implements HelloassoObject
 {
+    public const EVENT_TYPE_ORDER = 'Order';
+    public const EVENT_TYPE_PAYMENT = 'Payment';
+    public const EVENT_TYPE_FORM = 'Form';
+
     /**
      * The notification can have 3 different types : Order, Payment or Form (for campaign creation).
      */

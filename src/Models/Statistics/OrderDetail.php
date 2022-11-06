@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Helloasso\Models\Statistics;
 
-use Helloasso\Enums\FormType;
+use Helloasso\Enums\string;
 use Helloasso\Models\Common\MetaModel;
 use Helloasso\Models\HelloassoObject;
 
@@ -30,7 +30,7 @@ class OrderDetail implements HelloassoObject
     private string $organizationName;
     private string $organizationSlug;
 
-    private FormType $formType;
+    private string $formType;
     private MetaModel $meta;
 
     public function getId(): int
@@ -117,12 +117,12 @@ class OrderDetail implements HelloassoObject
         return $this;
     }
 
-    public function getFormType(): FormType
+    public function getFormType(): string
     {
         return $this->formType;
     }
 
-    public function setFormType(FormType $formType): self
+    public function setFormType(string $formType): self
     {
         $this->formType = $formType;
 
