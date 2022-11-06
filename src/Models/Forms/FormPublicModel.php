@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Helloasso\Models\Forms;
 
 use Helloasso\Enums\FormState;
-use Helloasso\Enums\string;
+use Helloasso\Enums\FromType;
 use Helloasso\Enums\MembershipValidityType;
 use Helloasso\Models\Common\DocumentModel;
 use Helloasso\Models\Common\MetaModel;

@@ -33,12 +33,12 @@ class Event implements HelloassoObject
         return $this;
     }
 
-    public function getData(): HelloassoObject
+    public function getData(): PaymentDetail|OrderDetail|FormPublicModel
     {
         return $this->data;
     }
 
-    public function setData(HelloassoObject $data): self
+    public function setData(PaymentDetail|OrderDetail|FormPublicModel $data): self
     {
         $this->data = $data;
 

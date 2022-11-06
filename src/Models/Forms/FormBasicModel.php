@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Helloasso\Models\Forms;
 
-use Helloasso\Enums\string;
+use Helloasso\Enums\FromType;
 use Helloasso\Models\HelloassoObject;
 
 class FormBasicModel implements HelloassoObject
