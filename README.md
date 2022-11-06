@@ -35,5 +35,5 @@ $checkoutIntent = (new InitCheckoutBody())
     ])
 ;
 
-$helloasso->checkout->create();
+$helloasso->checkout->create($checkoutIntent);
 ```

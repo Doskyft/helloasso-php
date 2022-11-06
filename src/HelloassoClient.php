@@ -6,11 +6,20 @@ namespace Helloasso;
 
 use Helloasso\Service\CheckoutIntentService;
 use Helloasso\Service\DirectoryService;
+use Helloasso\Service\EventService;
 
+/**
+ * @property CheckoutIntentService $checkout
+ * @property DirectoryService $directory
+ * @property EventService $event
+ */
 class HelloassoClient
 {
-    public CheckoutIntentService $checkout;
-    public DirectoryService $directory;
+    private array $services = [
+        'checkout' => CheckoutIntentService::class,
+        'directory' => DirectoryService::class,
+        'event' => EventService::class,
+    ];
 
     public function __construct(
         readonly string $clientId,
@@ -18,7 +27,8 @@ class HelloassoClient
         readonly string $organizationSlug,
         readonly bool $sandbox = false,
     ) {
-        $this->checkout = new CheckoutIntentService($clientId, $clientSecret, $organizationSlug, $sandbox);
-        $this->directory = new DirectoryService($clientId, $clientSecret, $organizationSlug, $sandbox);
+        foreach ($this->services as $key => $service) {
+            $this->$key = new $service($clientId, $clientSecret, $organizationSlug, $sandbox);
+        }
     }
 }

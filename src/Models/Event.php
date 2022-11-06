@@ -2,6 +2,10 @@
 
 namespace Helloasso\Models;
 
+use Helloasso\Models\Forms\FormPublicModel;
+use Helloasso\Models\Statistics\OrderDetail;
+use Helloasso\Models\Statistics\PaymentDetail;
+
 class Event implements HelloassoObject
 {
     /**
@@ -9,7 +13,7 @@ class Event implements HelloassoObject
      */
     private string $eventType;
 
-    private HelloassoObject $data;
+    private PaymentDetail|OrderDetail|FormPublicModel $data;
 
     private array $metadata;
 
