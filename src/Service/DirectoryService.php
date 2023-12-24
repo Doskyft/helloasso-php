@@ -6,5 +6,4 @@ namespace Helloasso\Service;
 
 class DirectoryService extends ApiRequest
 {
-
 }

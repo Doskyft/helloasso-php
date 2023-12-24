@@ -6,5 +6,4 @@ namespace Helloasso\Exception;
 
 class ForbiddenApiException extends HelloassoApiException
 {
-
 }

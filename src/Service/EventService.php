@@ -18,7 +18,7 @@ class EventService extends ApiRequest
     public function decode(string $eventData): Event
     {
         try {
-            $event = json_decode($eventData, true, 512, JSON_THROW_ON_ERROR);
+            $event = json_decode($eventData, true, 512, \JSON_THROW_ON_ERROR);
             $eventType = $event['eventType'] ?? null;
             $data = $event['data'] ?? null;
 
@@ -31,7 +31,7 @@ class EventService extends ApiRequest
             }
 
             /** @var string $dataDecoded */
-            $dataDecoded = json_encode($data, JSON_THROW_ON_ERROR);
+            $dataDecoded = json_encode($data, \JSON_THROW_ON_ERROR);
         } catch (\JsonException $e) {
             throw new InvalidValueException('data is malformed');
         }

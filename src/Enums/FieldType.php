@@ -32,5 +32,4 @@ enum FieldType: string
 
     // The field should be a number
     case Number = 'Number';
-
 }

@@ -10,8 +10,8 @@ use Helloasso\Service\EventService;
 
 /**
  * @property CheckoutIntentService $checkout
- * @property DirectoryService $directory
- * @property EventService $event
+ * @property DirectoryService      $directory
+ * @property EventService          $event
  */
 class HelloassoClient
 {

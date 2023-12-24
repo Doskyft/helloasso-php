@@ -105,8 +105,8 @@ abstract class ApiRequest
                 'client_secret' => $this->clientSecret,
             ],
             'headers' => [
-                'Content-Type: application/x-www-form-urlencoded'
-            ]
+                'Content-Type: application/x-www-form-urlencoded',
+            ],
         ];
 
         $request = $this->request(Request::METHOD_POST, $this->getBaseUrl().self::OAUTH_ENDPOINT.'/token', $params);

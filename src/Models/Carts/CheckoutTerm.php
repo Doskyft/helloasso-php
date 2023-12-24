@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Helloasso\Models\Carts;
 
-use DateTime;
 use Helloasso\Models\HelloassoObject;
 
 class CheckoutTerm implements HelloassoObject
@@ -17,7 +18,7 @@ class CheckoutTerm implements HelloassoObject
     /**
      * Date de l’échéance.
      */
-    private DateTime $date;
+    private \DateTime $date;
 
     public function getAmount(): int
     {
@@ -31,12 +32,12 @@ class CheckoutTerm implements HelloassoObject
         return $this;
     }
 
-    public function getDate(): DateTime
+    public function getDate(): \DateTime
     {
         return $this->date;
     }
 
-    public function setDate(DateTime $date): self
+    public function setDate(\DateTime $date): self
     {
         $this->date = $date;
 
