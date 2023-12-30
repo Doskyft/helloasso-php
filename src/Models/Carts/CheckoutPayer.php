@@ -1,63 +1,65 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Helloasso\Models\Carts;
 
-use DateTime;
 use Helloasso\Models\HelloassoObject;
 
 class CheckoutPayer implements HelloassoObject
 {
     /**
-     * Prénom du payeur
+     * Prénom du payeur.
      *
      * @example Jean
      */
     private ?string $firstName;
 
     /**
-     * Nom du payeur
+     * Nom du payeur.
      *
      * @example Dubois
      */
     private ?string $lastName;
 
     /**
-     * Adresse Email
+     * Adresse Email.
      *
      * @example test@helloasso.org
      */
     private ?string $email;
 
     /**
-     * Date de naissance du payeur
+     * Date de naissance du payeur.
      */
-    private ?DateTime $dateOfBirth;
+    private ?\DateTime $dateOfBirth;
 
     /**
-     * Adresse du contributeur
+     * Adresse du contributeur.
      */
     private ?string $address;
 
     /**
-     * Ville
+     * Ville.
      */
     private ?string $city;
 
     /**
-     * Code postal
+     * Code postal.
      */
     private ?string $zipCode;
 
     /**
-     * Pays
+     * Pays.
      *
      * @see https://www.wikiwand.com/en/List_of_ISO_3166_country_codes
+     *
      * @example FRA
      */
     private ?string $country;
 
     /**
-     * Le nom de la société qui va payer, si ce n’est pas un particulier
+     * Le nom de la société qui va payer, si ce n’est pas un particulier.
      */
     private ?string $companyName;
 
@@ -97,12 +99,12 @@ class CheckoutPayer implements HelloassoObject
         return $this;
     }
 
-    public function getDateOfBirth(): ?DateTime
+    public function getDateOfBirth(): ?\DateTime
     {
         return $this->dateOfBirth;
     }
 
-    public function setDateOfBirth(?DateTime $dateOfBirth): self
+    public function setDateOfBirth(?\DateTime $dateOfBirth): self
     {
         $this->dateOfBirth = $dateOfBirth;
 

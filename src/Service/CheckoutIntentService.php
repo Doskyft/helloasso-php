@@ -29,7 +29,7 @@ class CheckoutIntentService extends ApiRequest
 
         $request = $this->request(
             Request::METHOD_POST,
-            $this->getBaseUrl() . sprintf(self::CREATE_ENDPOINT, $this->organizationSlug),
+            $this->getBaseUrl().sprintf(self::CREATE_ENDPOINT, $this->organizationSlug),
             $params
         );
 
@@ -46,7 +46,7 @@ class CheckoutIntentService extends ApiRequest
     {
         $request = $this->request(
             Request::METHOD_GET,
-            $this->getBaseUrl() . sprintf(self::RETRIEVE_ENDPOINT, $this->organizationSlug, $checkoutIntentId)
+            $this->getBaseUrl().sprintf(self::RETRIEVE_ENDPOINT, $this->organizationSlug, $checkoutIntentId)
         );
 
         /** @var InitCheckoutResponse $content */

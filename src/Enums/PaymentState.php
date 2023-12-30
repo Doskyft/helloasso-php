@@ -29,4 +29,3 @@ enum PaymentState: string
     // Payment has been contested by the contributor
     case Contested = 'Contested';
 }
-

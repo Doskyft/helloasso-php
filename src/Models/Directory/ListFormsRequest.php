@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Helloasso\Models\Directory;
 
-use Helloasso\Enums\FromType;
 use Helloasso\Models\HelloassoObject;
 
 class ListFormsRequest implements HelloassoObject

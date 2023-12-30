@@ -17,5 +17,4 @@ enum FormState: string
 
     // The form is disabled and can be reenabled by changing state to public or private
     case Disabled = 'Disabled';
-
 }

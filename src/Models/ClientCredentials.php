@@ -1,26 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Helloasso\Models;
 
 class ClientCredentials implements HelloassoObject
 {
     /**
-     * The JWT token to use in future requests
+     * The JWT token to use in future requests.
      */
     private string $accessToken;
 
     /**
-     * Token used to refresh the token and get a new JWT token after expiration
+     * Token used to refresh the token and get a new JWT token after expiration.
      */
     private string $refreshToken;
 
     /**
-     * Token Type : always "bearer"
+     * Token Type : always "bearer".
      */
     private string $tokenType;
 
     /**
-     * The lifetime in seconds of the access token
+     * The lifetime in seconds of the access token.
      */
     private string $expiresIn;
 

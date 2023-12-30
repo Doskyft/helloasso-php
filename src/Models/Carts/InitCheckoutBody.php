@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Helloasso\Models\Carts;
 
 use Helloasso\Exception\InvalidValueException;
@@ -9,21 +11,21 @@ class InitCheckoutBody implements HelloassoObject
 {
     /**
      * Montant total (TTC) du paiement en centimes
-     * (doit être égal à la somme du montant initial ainsi que des échéances suivantes)
+     * (doit être égal à la somme du montant initial ainsi que des échéances suivantes).
      *
      * @example 1000 (pour : 10.00€)
      */
     private int $totalAmount;
 
     /**
-     * Montant du paiement (TTC) à payer immédiatement
+     * Montant du paiement (TTC) à payer immédiatement.
      *
      * @example 1000 (pour : 10.00€)
      */
     private int $initialAmount;
 
     /**
-     * Description de l’achat. Sera affiché à l’avenir dans le back office utilisateur et association
+     * Description de l’achat. Sera affiché à l’avenir dans le back office utilisateur et association.
      *
      * @example Maillot, 2 places concert XXX, Renouvellement licence Fédération X* 2021, etc
      */
@@ -47,7 +49,7 @@ class InitCheckoutBody implements HelloassoObject
 
     /**
      * L’url de retour après le paiement (“succeeded” ou “refused”).
-     * Https uniquement
+     * Https uniquement.
      *
      * @example https://www.partnertest.com/return.php
      */
@@ -55,7 +57,7 @@ class InitCheckoutBody implements HelloassoObject
 
     /**
      * Indique si le paiement (ou une partie) est assimilable à un don à l'association.
-     * Pour des raisons de conformité, ce paramètre est obligatoire
+     * Pour des raisons de conformité, ce paramètre est obligatoire.
      */
     private bool $containsDonation = false;
 
@@ -65,15 +67,15 @@ class InitCheckoutBody implements HelloassoObject
     private ?array $terms;
 
     /**
-     * Informations concernant le payeur
+     * Informations concernant le payeur.
      */
     private ?CheckoutPayer $payer;
 
     /**
      * @var array<array> Informations partenaire.
-     * Ces infos ne seront pas transmises à l’association ou au contributeur.
-     * Elles vous seront renvoyées avec la commande ou le paiement lors de la notification,
-     * ou quand vous voudrez récupérer le détail du paiement ou de la commande.
+     *                   Ces infos ne seront pas transmises à l’association ou au contributeur.
+     *                   Elles vous seront renvoyées avec la commande ou le paiement lors de la notification,
+     *                   ou quand vous voudrez récupérer le détail du paiement ou de la commande.
      */
     private array $metadata;
 
