@@ -16,20 +16,14 @@ class HelloassoClient
 
     public EventService $event;
 
-    private array $services = [
-        'checkout' => CheckoutIntentService::class,
-        'directory' => DirectoryService::class,
-        'event' => EventService::class,
-    ];
-
     public function __construct(
         readonly string $clientId,
         readonly string $clientSecret,
         readonly string $organizationSlug,
         readonly bool $sandbox = false,
     ) {
-        foreach ($this->services as $key => $service) {
-            $this->$key = new $service($clientId, $clientSecret, $organizationSlug, $sandbox);
-        }
+        $this->checkout = new CheckoutIntentService($clientId, $clientSecret, $organizationSlug, $sandbox);
+        $this->directory = new DirectoryService($clientId, $clientSecret, $organizationSlug, $sandbox);
+        $this->event = new EventService($clientId, $clientSecret, $organizationSlug, $sandbox);
     }
 }
