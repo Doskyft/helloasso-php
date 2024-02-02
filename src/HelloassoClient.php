@@ -8,13 +8,14 @@ use Helloasso\Service\CheckoutIntentService;
 use Helloasso\Service\DirectoryService;
 use Helloasso\Service\EventService;
 
-/**
- * @property CheckoutIntentService $checkout
- * @property DirectoryService      $directory
- * @property EventService          $event
- */
 class HelloassoClient
 {
+    public CheckoutIntentService $checkout;
+
+    public DirectoryService $directory;
+
+    public EventService $event;
+
     private array $services = [
         'checkout' => CheckoutIntentService::class,
         'directory' => DirectoryService::class,
