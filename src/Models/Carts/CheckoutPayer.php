@@ -32,7 +32,7 @@ class CheckoutPayer implements HelloassoObject
     /**
      * Date de naissance du payeur.
      */
-    private ?\DateTime $dateOfBirth;
+    private ?\DateTimeInterface $dateOfBirth;
 
     /**
      * Adresse du contributeur.
@@ -99,12 +99,12 @@ class CheckoutPayer implements HelloassoObject
         return $this;
     }
 
-    public function getDateOfBirth(): ?\DateTime
+    public function getDateOfBirth(): ?\DateTimeInterface
     {
         return $this->dateOfBirth;
     }
 
-    public function setDateOfBirth(?\DateTime $dateOfBirth): self
+    public function setDateOfBirth(?\DateTimeInterface $dateOfBirth): self
     {
         $this->dateOfBirth = $dateOfBirth;
 

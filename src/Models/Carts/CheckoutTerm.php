@@ -18,7 +18,7 @@ class CheckoutTerm implements HelloassoObject
     /**
      * Date de l’échéance.
      */
-    private \DateTime $date;
+    private \DateTimeInterface $date;
 
     public function getAmount(): int
     {
@@ -32,12 +32,12 @@ class CheckoutTerm implements HelloassoObject
         return $this;
     }
 
-    public function getDate(): \DateTime
+    public function getDate(): \DateTimeInterface
     {
         return $this->date;
     }
 
-    public function setDate(\DateTime $date): self
+    public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
 
