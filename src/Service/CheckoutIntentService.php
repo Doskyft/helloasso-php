@@ -38,20 +38,4 @@ class CheckoutIntentService extends ApiRequest
 
         return $content;
     }
-
-    /**
-     * @throws HelloassoApiException
-     */
-    public function retrieve(int $checkoutIntentId): InitCheckoutResponse
-    {
-        $request = $this->request(
-            Request::METHOD_GET,
-            $this->getBaseUrl().sprintf(self::RETRIEVE_ENDPOINT, $this->organizationSlug, $checkoutIntentId)
-        );
-
-        /** @var InitCheckoutResponse $content */
-        $content = $this->deserialize($this->getContent($request), InitCheckoutResponse::class);
-
-        return $content;
-    }
 }
