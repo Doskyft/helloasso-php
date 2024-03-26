@@ -14,7 +14,9 @@
         "symfony/http-foundation": "^6.4|^7.0",
         "symfony/http-kernel": "^6.4|^7.0",
         "symfony/serializer": "^6.4|^7.0",
-        "symfony/property-info": "^6.4|^7.0"
+        "symfony/property-info": "^6.4|^7.0",
+        "phpdocumentor/reflection-docblock": "^5.3",
+        "symfony/property-access": "^6.4|^7.0"
     },
     "autoload": {
         "psr-4": {
