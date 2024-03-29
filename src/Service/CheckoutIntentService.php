@@ -46,9 +46,6 @@ class CheckoutIntentService extends ApiRequest
     {
         $params = [
             'auth_bearer' => $this->oauth()->getAccessToken(),
-            'headers' => [
-                'Content-type: application/json',
-            ],
         ];
 
         $request = $this->request(
