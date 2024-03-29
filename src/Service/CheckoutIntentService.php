@@ -44,9 +44,17 @@ class CheckoutIntentService extends ApiRequest
      */
     public function retrieve(int $checkoutIntentId): InitCheckoutResponse
     {
+        $params = [
+            'auth_bearer' => $this->oauth()->getAccessToken(),
+            'headers' => [
+                'Content-type: application/json',
+            ],
+        ];
+
         $request = $this->request(
             Request::METHOD_GET,
-            $this->getBaseUrl().sprintf(self::RETRIEVE_ENDPOINT, $this->organizationSlug, $checkoutIntentId)
+            $this->getBaseUrl().sprintf(self::RETRIEVE_ENDPOINT, $this->organizationSlug, $checkoutIntentId),
+            $params
         );
 
         /** @var InitCheckoutResponse $content */
