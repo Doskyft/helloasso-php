@@ -23,10 +23,18 @@
             "Helloasso\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Helloasso\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Doskyft",
             "email": "doskyft@gmail.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    }
 }
