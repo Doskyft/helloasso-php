@@ -10,13 +10,30 @@ composer require doskyft/helloasso-php
 
 ## Utilisation
 
+Pour commencer, il faut créer une instance de `HelloassoClient`.
+
 ```php
-$helloasso = new HelloassoClient(
+use Helloasso\HelloassoClientFactory;
+
+$helloassoClient = HelloassoClientFactory::create(
     'hello_asso_id',
     'hello_asso_secret',
     'hello_asso_organization_slug',
     true # sandbox
 );
+```
+
+Maintenant, on peut commencer à utiliser le client
+
+### CheckoutIntent
+
+<details>
+
+<summary>Créer un CheckoutIntent</summary>
+
+```php
+use Helloasso\Models\Carts\CheckoutPayer;
+use Helloasso\Models\Carts\InitCheckoutBody;
 
 $checkoutIntent = (new InitCheckoutBody())
     ->setTotalAmount(1000)
@@ -35,8 +52,23 @@ $checkoutIntent = (new InitCheckoutBody())
     ])
 ;
 
-$helloasso->checkout->create($checkoutIntent);
+$helloassoClient->checkout->create($checkoutIntent);
 ```
+[Voir la documentation](https://api.helloasso.com/v5/swagger/ui/index#/Checkout%20intents%20management/OrganizationCheckoutIntents_PostInitCheckout)
+</details>
+
+### Évènements
+
+<details>
+
+<summary></summary>
+
+```php
+use Helloasso\Models\Event;
+
+$event = $helloassoClient->decodeEvent($rawEventReceivedFromHelloasso); // Returns an instance of Event
+```
+</details>
 
 ## Contributeurs
 

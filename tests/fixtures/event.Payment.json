@@ -1,0 +1,63 @@
+{
+    "data": {
+        "order": {
+            "id": 12578,
+            "date": "2019-12-15T17:27:02+01:00",
+            "formSlug": "formulaire-exemple",
+            "formType": "Event",
+            "organizationName": "name",
+            "organizationSlug": "association-exemple",
+            "organizationType": "Association1901",
+            "organizationIsUnderColucheLaw": false,
+            "formName": "name",
+            "meta": {
+                "createdAt": "2019-12-15T17:27:02+01:00",
+                "updatedAt": "2019-12-15T17:27:02+01:00"
+            },
+            "isAnonymous": false,
+            "isAmountHidden": false
+        },
+        "payer": {
+            "email": "john.doe@test.com",
+            "address": "23 rue du palmier",
+            "city": "Paris",
+            "zipCode": "75000",
+            "country": "FRA",
+            "company": "Hello Asso",
+            "dateOfBirth": "1986-07-06T00:00:00+02:00",
+            "firstName": "John",
+            "lastName": "Doe"
+        },
+        "items": [
+            {
+                "shareAmount": 11000,
+                "shareItemAmount": 10000,
+                "shareOptionsAmount": 1000,
+                "id": 12578,
+                "amount": 30000,
+                "type": "Membership",
+                "state": "Processed"
+            },
+            {
+                "shareAmount": 1000,
+                "shareItemAmount": 1000,
+                "id": 12579,
+                "amount": 1000,
+                "type": "Donation",
+                "state": "Processed"
+            }
+        ],
+        "paymentReceiptUrl": "https://www.helloasso.com/associations/association-exemple/evenements/formulaire-exemple/paiement-attestation/12578",
+        "id": 12345,
+        "amount": 5550,
+        "date": "2024-04-04T23:12:53.6767445+02:00",
+        "paymentMeans": "Card",
+        "installmentNumber": 1,
+        "state": "Authorized",
+        "meta": {
+            "createdAt": "2024-04-04T23:12:53.6767445+02:00",
+            "updatedAt": "2024-04-04T23:12:53.6767445+02:00"
+        }
+    },
+    "eventType": "Payment"
+}

@@ -4,17 +4,16 @@ declare(strict_types=1);
 
 namespace Helloasso\Tests\Functional\Service;
 
+use Helloasso\Models\Carts\CheckoutIntentResponse;
 use Helloasso\Models\Carts\CheckoutPayer;
 use Helloasso\Models\Carts\InitCheckoutBody;
 use Helloasso\Models\Carts\InitCheckoutResponse;
-use Helloasso\Service\CheckoutIntentService;
+use Helloasso\Tests\Functional\FunctionalTestCase;
 
-final class CheckoutIntentServiceTest extends ServiceTestCase
+final class CheckoutIntentServiceTest extends FunctionalTestCase
 {
-    public function testCreate(): void
+    public function testCreateAndRetrieve(): void
     {
-        $service = $this->createService(CheckoutIntentService::class);
-
         $payer = new CheckoutPayer();
         $payer
             ->setFirstName('Greta')
@@ -33,8 +32,11 @@ final class CheckoutIntentServiceTest extends ServiceTestCase
             ->setPayer($payer)
         ;
 
-        $response = $service->create($body);
+        $response = $this->getClient()->checkout->create($body);
 
         $this->assertInstanceOf(InitCheckoutResponse::class, $response);
+
+        $response = $this->getClient()->checkout->retrieve($response->getId());
+        $this->assertInstanceOf(CheckoutIntentResponse::class, $response);
     }
 }

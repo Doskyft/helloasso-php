@@ -1,0 +1,145 @@
+{
+    "data": {
+        "order": {
+            "id": 12578,
+            "date": "2019-12-15T17:27:02+01:00",
+            "formSlug": "formulaire-exemple",
+            "formType": "Event",
+            "organizationName": "name",
+            "organizationSlug": "association-exemple",
+            "organizationType": "Association1901",
+            "organizationIsUnderColucheLaw": false,
+            "formName": "name",
+            "meta": {
+                "createdAt": "2019-12-15T17:27:02+01:00",
+                "updatedAt": "2019-12-15T17:27:02+01:00"
+            },
+            "isAnonymous": false,
+            "isAmountHidden": false
+        },
+        "payer": {
+            "email": "john.doe@test.com",
+            "address": "23 rue du palmier",
+            "city": "Paris",
+            "zipCode": "75000",
+            "country": "FRA",
+            "company": "Hello Asso",
+            "dateOfBirth": "1986-07-06T00:00:00+02:00",
+            "firstName": "John",
+            "lastName": "Doe"
+        },
+        "payments": [
+            {
+                "cashOutState": "CashedOut",
+                "shareAmount": 10000,
+                "id": 159875,
+                "amount": 11000,
+                "date": "2019-12-15T17:27:02+01:00",
+                "paymentMeans": "Card",
+                "installmentNumber": 1,
+                "state": "Authorized",
+                "meta": {
+                    "createdAt": "2019-12-15T17:27:02+01:00",
+                    "updatedAt": "2019-12-15T17:27:02+01:00"
+                }
+            },
+            {
+                "cashOutState": "Transfered",
+                "shareAmount": 30000,
+                "id": 159876,
+                "amount": 9000,
+                "date": "2020-01-15T17:27:02+01:00",
+                "paymentMeans": "Card",
+                "installmentNumber": 2,
+                "state": "Authorized",
+                "meta": {
+                    "createdAt": "2020-01-15T17:27:02+01:00",
+                    "updatedAt": "2020-01-15T17:27:02+01:00"
+                }
+            },
+            {
+                "shareAmount": 30000,
+                "id": 159877,
+                "amount": 9000,
+                "date": "2020-02-15T17:27:02+01:00",
+                "paymentMeans": "Card",
+                "installmentNumber": 3,
+                "state": "Pending",
+                "meta": {
+                    "createdAt": "2020-02-15T17:27:02+01:00",
+                    "updatedAt": "2020-02-15T17:27:02+01:00"
+                },
+                "refundOperations": [
+                    {
+                        "id": 1,
+                        "amount": 2000,
+                        "amountTip": 200,
+                        "status": "PROCESSED",
+                        "meta": {
+                            "createdAt": "2024-04-02T10:16:24.0205634+02:00",
+                            "updatedAt": "2024-04-03T10:16:24.0205634+02:00"
+                        }
+                    }
+                ]
+            }
+        ],
+        "name": "Adhesion Football",
+        "user": {
+            "firstName": "John",
+            "lastName": "Doe"
+        },
+        "priceCategory": "Fixed",
+        "discount": {
+            "code": "DISC30 : -30€",
+            "amount": 3000
+        },
+        "customFields": [
+            {
+                "id": 0,
+                "name": "BirthDate",
+                "type": "Date",
+                "answer": "1978-09-15"
+            },
+            {
+                "id": 0,
+                "name": "ZipCode",
+                "type": "Zipcode",
+                "answer": "33600"
+            }
+        ],
+        "options": [
+            {
+                "name": "T-Shirt",
+                "amount": 700,
+                "priceCategory": "Fixed",
+                "isRequired": false,
+                "customFields": [
+                    {
+                        "id": 0,
+                        "name": "Couleur",
+                        "type": "ChoiceList",
+                        "answer": "Bleue"
+                    }
+                ],
+                "optionId": 12581
+            },
+            {
+                "name": "Casquette",
+                "amount": 300,
+                "priceCategory": "Fixed",
+                "isRequired": false,
+                "optionId": 12580
+            }
+        ],
+        "qrCode": "MTI1Nzg6NjM3MTIwMjQwMjIwMDAwMDAw",
+        "tierDescription": "tierDescription",
+        "tierId": 168965,
+        "comment": "comment",
+        "id": 12578,
+        "amount": 30000,
+        "type": "Membership",
+        "initialAmount": 30000,
+        "state": "Processed"
+    },
+    "eventType": "Order"
+}

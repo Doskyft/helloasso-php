@@ -1,0 +1,105 @@
+{
+    "data": {
+        "organizationLogo": "https://cdn.helloasso.com/img/logos/association logo example.jpg",
+        "organizationName": "Association Exemple",
+        "tiers": [
+            {
+                "id": 1,
+                "label": "mon tarif 1",
+                "description": "description 1",
+                "tierType": "Registration",
+                "price": 1000,
+                "vatRate": 0,
+                "paymentFrequency": "Single",
+                "maxPerUser": 5,
+                "isEligibleTaxReceipt": true
+            },
+            {
+                "id": 2,
+                "label": "mon tarif 2",
+                "description": "description 2",
+                "tierType": "Registration",
+                "price": 1000,
+                "vatRate": 0,
+                "paymentFrequency": "Single",
+                "maxPerUser": 5,
+                "isEligibleTaxReceipt": true
+            },
+            {
+                "id": 3,
+                "label": "mon tarif 3",
+                "description": "description 3",
+                "tierType": "Registration",
+                "price": 1000,
+                "vatRate": 0,
+                "paymentFrequency": "Single",
+                "maxPerUser": 5,
+                "isEligibleTaxReceipt": true
+            },
+            {
+                "id": 4,
+                "label": "mon tarif 4",
+                "description": "description 4",
+                "tierType": "Registration",
+                "price": 1000,
+                "vatRate": 0,
+                "paymentFrequency": "Single",
+                "maxPerUser": 5,
+                "isEligibleTaxReceipt": true
+            },
+            {
+                "id": 5,
+                "label": "mon tarif 5",
+                "description": "description 5",
+                "tierType": "Registration",
+                "price": 1000,
+                "vatRate": 0,
+                "paymentFrequency": "Single",
+                "maxPerUser": 5,
+                "isEligibleTaxReceipt": true
+            }
+        ],
+        "activityType": "ActivityType",
+        "activityTypeId": 12,
+        "place": {
+            "address": "23 rue du palmier",
+            "name": "Café du théatre",
+            "city": "Paris",
+            "zipCode": "75000",
+            "country": "FRA",
+            "geoLocation": {
+                "latitude": 22.56,
+                "longitude": 44.87
+            }
+        },
+        "saleEndDate": "2024-04-06T23:12:53.5983212+02:00",
+        "saleStartDate": "2024-04-02T23:12:53.5983212+02:00",
+        "banner": {
+            "fileName": "thumbnail 1",
+            "publicUrl": "https://cdn.helloasso.com/img/photos/evenements/thumbnail 1"
+        },
+        "currency": "EUR",
+        "description": "Description de mon événement",
+        "startDate": "2024-04-04T23:05:53.5983212+02:00",
+        "endDate": "2024-04-11T23:12:53.5983212+02:00",
+        "logo": {
+            "fileName": "image 1",
+            "publicUrl": "https://cdn.helloasso.com/img/photos/evenements/image 1"
+        },
+        "meta": {
+            "createdAt": "2024-04-04T22:57:53.5983212+02:00",
+            "updatedAt": "2024-04-04T22:57:53.5983212+02:00"
+        },
+        "state": "Public",
+        "title": "Nom de mon événement",
+        "widgetButtonUrl": "https://www.helloasso.com/associations/association-exemple/evenements/formulaire-exemple/widget-bouton",
+        "widgetFullUrl": "https://www.helloasso.com/associations/association-exemple/evenements/formulaire-exemple/widget",
+        "widgetVignetteHorizontalUrl": "https://www.helloasso.com/associations/association-exemple/evenements/formulaire-exemple/widget-vignette-horizontale",
+        "widgetVignetteVerticalUrl": "https://www.helloasso.com/associations/association-exemple/evenements/formulaire-exemple/widget-vignette",
+        "formSlug": "formulaire-exemple",
+        "formType": "Event",
+        "url": "https://www.helloasso.com/associations/association-exemple/evenements/formulaire-exemple",
+        "organizationSlug": "association-exemple"
+    },
+    "eventType": "Form"
+}
