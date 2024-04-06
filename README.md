@@ -70,6 +70,14 @@ $event = $helloassoClient->decodeEvent($rawEventReceivedFromHelloasso); // Retur
 ```
 </details>
 
+## Contribuer
+
+Ce projet inclut des tests fonctionnels qui nécessitent un accès à [la sandbox d'Helloasso](https://www.helloasso-sandbox.com/).
+
+Pour lancer les tests :
+
+    HELLOASSO_CLIENT_ID=[YourClientId] HELLOASSO_CLIENT_SECRET=[YourClientSecret] HELLOASSO_ORGANISATION_SLUG=[YourOrganisation] vendor/bin/phpunit
+
 ## Contributeurs
 
 <table>

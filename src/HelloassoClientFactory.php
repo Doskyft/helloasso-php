@@ -17,6 +17,7 @@ use Symfony\Component\Serializer\Normalizer\BackedEnumNormalizer;
 use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class HelloassoClientFactory
 {
@@ -25,8 +26,9 @@ class HelloassoClientFactory
         string $clientSecret,
         string $organizationSlug,
         bool $sandbox = false,
+        ?HttpClientInterface $httpClient = null,
     ): HelloassoClient {
-        $httpClient = HttpClient::createForBaseUri($sandbox ? 'https://api.helloasso-sandbox.com' : 'https://api.helloasso.com', [
+        $httpClient = $httpClient ?? HttpClient::createForBaseUri($sandbox ? 'https://api.helloasso-sandbox.com' : 'https://api.helloasso.com', [
             'headers' => [
                 'accept' => 'application/json',
                 'Content-type: application/json',
