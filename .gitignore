@@ -1,8 +1,7 @@
 .idea/
 vendor/
 
-composer.lock
+/composer.lock
 
-/tools/*/composer.lock
 /tools/*/vendor
 /.phpunit.cache
