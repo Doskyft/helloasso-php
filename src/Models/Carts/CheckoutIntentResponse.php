@@ -21,7 +21,7 @@ class CheckoutIntentResponse implements HelloassoObject
 
     private array $metadata;
 
-    private OrderDetail $order;
+    private ?OrderDetail $order = null;
 
     public function getId(): int
     {
@@ -59,12 +59,12 @@ class CheckoutIntentResponse implements HelloassoObject
         return $this;
     }
 
-    public function getOrder(): OrderDetail
+    public function getOrder(): ?OrderDetail
     {
         return $this->order;
     }
 
-    public function setOrder(OrderDetail $order): self
+    public function setOrder(?OrderDetail $order): self
     {
         $this->order = $order;
 
