@@ -98,9 +98,9 @@ class TierPublicModel implements HelloassoObject
         return $this->vatRate;
     }
 
-    public function setVatRate(float $vatRate): self
+    public function setVatRate(float|int $vatRate): self
     {
-        $this->vatRate = $vatRate;
+        $this->vatRate = (float) $vatRate;
 
         return $this;
     }
