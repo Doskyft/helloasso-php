@@ -43,10 +43,11 @@ class ApiCaller
      *
      * @return T
      */
-    public function get(string $url, string $responseClassType): HelloassoObject
+    public function get(string $url, string $responseClassType, array|HelloassoObject|null $request = null): HelloassoObject
     {
         $response = $this->httpClient->request(Request::METHOD_GET, $url, [
             'auth_bearer' => $this->tokenManager->getAccessToken(),
+            'body' => $request,
         ]);
 
         return $this->responseHandler->deserializeResponse($response, $responseClassType);

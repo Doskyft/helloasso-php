@@ -12,12 +12,14 @@ use Helloasso\Models\Statistics\OrderDetail;
 use Helloasso\Models\Statistics\PaymentDetail;
 use Helloasso\Service\CheckoutIntentService;
 use Helloasso\Service\DirectoryService;
+use Helloasso\Service\PaymentService;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
 class HelloassoClient
 {
     public CheckoutIntentService $checkout;
+    public PaymentService $payment;
     public DirectoryService $directory;
 
     public function __construct(
@@ -27,6 +29,7 @@ class HelloassoClient
     ) {
         $this->checkout = new CheckoutIntentService($apiCaller, $organizationSlug);
         $this->directory = new DirectoryService();
+        $this->payment = new PaymentService($apiCaller, $organizationSlug);
     }
 
     /**
