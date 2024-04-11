@@ -30,6 +30,18 @@ class PaymentService
      */
     public function all(array $params = []): PaymentCollection
     {
-        return $this->apiCaller->get("/v5/organizations/{$this->organizationSlug}/payments", PaymentCollection::class, $params);
+        return $this->apiCaller->get("/v5/organizations/{$this->organizationSlug}/payments", PaymentCollection::class, [
+            'query' => $params,
+        ]);
+    }
+
+    /**
+     * @throws HelloassoApiException
+     */
+    public function refund(int $id, array $params = []): Payment
+    {
+        return $this->apiCaller->post("/v5/payments/$id/refund", null, Payment::class, [
+            'query' => $params,
+        ]);
     }
 }

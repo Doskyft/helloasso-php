@@ -22,16 +22,17 @@ class ApiCaller
     /**
      * @template T of HelloassoObject
      *
-     * @param class-string<T> $responseClassType
+     * @param class-string<T>      $responseClassType
+     * @param array<string, mixed> $options           HttpClient request options
      *
      * @return T
      */
-    public function post(string $url, array|HelloassoObject|null $body, string $responseClassType): HelloassoObject
+    public function post(string $url, array|HelloassoObject|null $body, string $responseClassType, ?array $options = []): HelloassoObject
     {
-        $response = $this->httpClient->request(Request::METHOD_POST, $url, [
+        $response = $this->httpClient->request(Request::METHOD_POST, $url, array_merge([
             'auth_bearer' => $this->tokenManager->getAccessToken(),
             'body' => $this->serializer->serialize($body, 'json'),
-        ]);
+        ], $options));
 
         return $this->responseHandler->deserializeResponse($response, $responseClassType);
     }
@@ -43,12 +44,11 @@ class ApiCaller
      *
      * @return T
      */
-    public function get(string $url, string $responseClassType, array|HelloassoObject|null $request = null): HelloassoObject
+    public function get(string $url, string $responseClassType, ?array $options = []): HelloassoObject
     {
-        $response = $this->httpClient->request(Request::METHOD_GET, $url, [
+        $response = $this->httpClient->request(Request::METHOD_GET, $url, array_merge([
             'auth_bearer' => $this->tokenManager->getAccessToken(),
-            'body' => $request,
-        ]);
+        ], $options));
 
         return $this->responseHandler->deserializeResponse($response, $responseClassType);
     }
