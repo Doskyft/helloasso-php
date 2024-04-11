@@ -14,7 +14,7 @@ abstract class FunctionalTestCase extends TestCase
     {
         $clientId = getenv('HELLOASSO_CLIENT_ID');
         $clientSecret = getenv('HELLOASSO_CLIENT_SECRET');
-        $organisationSlug = getenv('HELLOASSO_ORGANISATION') ? getenv('HELLOASSO_ORGANISATION_SLUG') : 'helloasso-php-sdk';
+        $organisationSlug = false !== getenv('HELLOASSO_ORGANISATION') ? getenv('HELLOASSO_ORGANISATION') : 'helloasso-php-sdk';
 
         if (empty($clientId) || empty($clientSecret)) {
             $this->markTestSkipped();
