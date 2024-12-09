@@ -67,11 +67,17 @@ class ItemOption implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return ItemCustomField[]
+     */
     public function getCustomFields(): array
     {
         return $this->customFields;
     }
 
+    /**
+     * @param ItemCustomField[] $customFields
+     */
     public function setCustomFields(array $customFields): self
     {
         $this->customFields = $customFields;

@@ -189,11 +189,17 @@ class TierPublicModel implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return TermModel[]
+     */
     public function getTerms(): array
     {
         return $this->terms;
     }
 
+    /**
+     * @param TermModel[] $terms
+     */
     public function setTerms(array $terms): self
     {
         $this->terms = $terms;

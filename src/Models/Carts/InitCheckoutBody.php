@@ -72,10 +72,10 @@ class InitCheckoutBody implements HelloassoObject
     private ?CheckoutPayer $payer;
 
     /**
-     * @var array<array> Informations partenaire.
-     *                   Ces infos ne seront pas transmises à l’association ou au contributeur.
-     *                   Elles vous seront renvoyées avec la commande ou le paiement lors de la notification,
-     *                   ou quand vous voudrez récupérer le détail du paiement ou de la commande.
+     * @var array<string, mixed> Informations partenaire.
+     *                           Ces infos ne seront pas transmises à l’association ou au contributeur.
+     *                           Elles vous seront renvoyées avec la commande ou le paiement lors de la notification,
+     *                           ou quand vous voudrez récupérer le détail du paiement ou de la commande.
      */
     private array $metadata;
 
@@ -218,11 +218,17 @@ class InitCheckoutBody implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getMetadata(): array
     {
         return $this->metadata;
     }
 
+    /**
+     * @param array<string, mixed> $metadata
+     */
     public function setMetadata(array $metadata): self
     {
         $this->metadata = $metadata;

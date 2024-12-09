@@ -22,8 +22,9 @@ class ApiCaller
     /**
      * @template T of HelloassoObject
      *
-     * @param class-string<T>      $responseClassType
-     * @param array<string, mixed> $options           HttpClient request options
+     * @param array<mixed>|HelloassoObject|null $body              The body of the request to make
+     * @param class-string<T>                   $responseClassType
+     * @param array<string, mixed>              $options           HttpClient request options
      *
      * @return T
      */
@@ -40,7 +41,8 @@ class ApiCaller
     /**
      * @template T of HelloassoObject
      *
-     * @param class-string<T> $responseClassType
+     * @param class-string<T>      $responseClassType
+     * @param array<string, mixed> $options
      *
      * @return T
      */

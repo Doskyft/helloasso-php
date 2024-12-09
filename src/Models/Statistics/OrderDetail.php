@@ -56,11 +56,17 @@ class OrderDetail implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return OrderItem[]
+     */
     public function getItems(): array
     {
         return $this->items;
     }
 
+    /**
+     * @param OrderItem[] $items
+     */
     public function setItems(array $items): self
     {
         $this->items = $items;
@@ -68,11 +74,17 @@ class OrderDetail implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return OrderPayment[]
+     */
     public function getPayments(): array
     {
         return $this->payments;
     }
 
+    /**
+     * @param OrderPayment[] $payments
+     */
     public function setPayments(array $payments): self
     {
         $this->payments = $payments;

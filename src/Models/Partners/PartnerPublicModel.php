@@ -81,11 +81,17 @@ class PartnerPublicModel implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return ApiUrlNotificationModel[]
+     */
     public function getUrlNotificationList(): array
     {
         return $this->urlNotificationList;
     }
 
+    /**
+     * @param ApiUrlNotificationModel[] $urlNotificationList
+     */
     public function setUrlNotificationList(array $urlNotificationList): self
     {
         $this->urlNotificationList = $urlNotificationList;

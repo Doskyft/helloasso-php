@@ -33,11 +33,17 @@ class OrderPayment implements HelloassoObject
     private MetaModel $meta;
     private PaymentOffLineMeansModel $paymentOffLineMean;
 
+    /**
+     * @return ShareItem[]
+     */
     public function getItems(): array
     {
         return $this->items;
     }
 
+    /**
+     * @param ShareItem[] $items
+     */
     public function setItems(array $items): self
     {
         $this->items = $items;

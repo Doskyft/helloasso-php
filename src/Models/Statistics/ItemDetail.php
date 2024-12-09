@@ -12,6 +12,10 @@ use Helloasso\Models\HelloassoObject;
 class ItemDetail implements HelloassoObject
 {
     private Payer $payer;
+
+    /**
+     * @var array<string, mixed>
+     */
     private array $metadata;
     private OrderLight $order;
 
@@ -59,11 +63,17 @@ class ItemDetail implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getMetadata(): array
     {
         return $this->metadata;
     }
 
+    /**
+     * @param array<string, mixed> $metadata
+     */
     public function setMetadata(array $metadata): self
     {
         $this->metadata = $metadata;
@@ -83,11 +93,17 @@ class ItemDetail implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return ItemPayment[]
+     */
     public function getPayments(): array
     {
         return $this->payments;
     }
 
+    /**
+     * @param ItemPayment[] $payments
+     */
     public function setPayments(array $payments): self
     {
         $this->payments = $payments;
@@ -155,11 +171,17 @@ class ItemDetail implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return ItemCustomField[]
+     */
     public function getCustomFields(): array
     {
         return $this->customFields;
     }
 
+    /**
+     * @param ItemCustomField[] $customFields
+     */
     public function setCustomFields(array $customFields): self
     {
         $this->customFields = $customFields;
@@ -167,11 +189,17 @@ class ItemDetail implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return ItemOption[]
+     */
     public function getOptions(): array
     {
         return $this->options;
     }
 
+    /**
+     * @param ItemOption[] $options
+     */
     public function setOptions(array $options): self
     {
         $this->options = $options;

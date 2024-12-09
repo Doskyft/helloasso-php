@@ -19,6 +19,9 @@ class CheckoutIntentResponse implements HelloassoObject
      */
     private string $redirectUrl;
 
+    /**
+     * @var array<string, mixed>
+     */
     private array $metadata;
 
     private ?OrderDetail $order = null;
@@ -47,11 +50,17 @@ class CheckoutIntentResponse implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getMetadata(): array
     {
         return $this->metadata;
     }
 
+    /**
+     * @param array<string, mixed> $metadata
+     */
     public function setMetadata(array $metadata): self
     {
         $this->metadata = $metadata;

@@ -26,6 +26,8 @@ class PaymentService
     }
 
     /**
+     * @param array<string, mixed> $params
+     *
      * @throws HelloassoApiException
      */
     public function all(array $params = []): PaymentCollection
@@ -36,6 +38,8 @@ class PaymentService
     }
 
     /**
+     * @param array<string, mixed> $params
+     *
      * @throws HelloassoApiException
      */
     public function refund(int $id, array $params = []): Payment
