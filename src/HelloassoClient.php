@@ -14,7 +14,6 @@ use Helloasso\Service\CheckoutIntentService;
 use Helloasso\Service\DirectoryService;
 use Helloasso\Service\PaymentService;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 class HelloassoClient
 {
@@ -23,7 +22,7 @@ class HelloassoClient
     public DirectoryService $directory;
 
     public function __construct(
-        private readonly SerializerInterface|DenormalizerInterface $serializer,
+        private readonly DenormalizerInterface $serializer,
         ApiCaller $apiCaller,
         string $organizationSlug,
     ) {
