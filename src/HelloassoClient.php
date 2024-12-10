@@ -59,7 +59,7 @@ class HelloassoClient
             Event::EVENT_TYPE_FORM => FormPublicModel::class,
             Event::EVENT_TYPE_ORDER => OrderDetail::class,
             Event::EVENT_TYPE_PAYMENT => PaymentDetail::class,
-            default => throw new InvalidValueException('eventType "'.$eventType.'" not supported')
+            default => throw new InvalidValueException('eventType "'.$eventType.'" not supported'),
         };
 
         return (new Event())

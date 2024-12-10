@@ -23,7 +23,7 @@ class CheckoutIntentService
      */
     public function create(InitCheckoutBody $checkoutIntent): InitCheckoutResponse
     {
-        $url = sprintf('/v5/organizations/%s/checkout-intents', $this->organizationSlug);
+        $url = \sprintf('/v5/organizations/%s/checkout-intents', $this->organizationSlug);
 
         return $this->apiCaller->post($url, $checkoutIntent, InitCheckoutResponse::class);
     }
@@ -33,7 +33,7 @@ class CheckoutIntentService
      */
     public function retrieve(int $checkoutIntentId): CheckoutIntentResponse
     {
-        $url = sprintf('/v5/organizations/%s/checkout-intents/%d', $this->organizationSlug, $checkoutIntentId);
+        $url = \sprintf('/v5/organizations/%s/checkout-intents/%d', $this->organizationSlug, $checkoutIntentId);
 
         return $this->apiCaller->get($url, CheckoutIntentResponse::class);
     }
