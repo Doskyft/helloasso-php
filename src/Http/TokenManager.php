@@ -23,13 +23,13 @@ class TokenManager
     public function getAccessToken(): string
     {
         if (null === $this->accessToken) {
-            $this->retrieveAccessToken();
+            $this->accessToken = $this->retrieveAccessToken();
         }
 
         return $this->accessToken;
     }
 
-    private function retrieveAccessToken(): void
+    private function retrieveAccessToken(): string
     {
         $response = $this->httpClient->request(Request::METHOD_POST, '/oauth2/token', [
             'body' => [
@@ -44,6 +44,6 @@ class TokenManager
 
         $credentials = $this->responseHandler->deserializeResponse($response, ClientCredentials::class);
 
-        $this->accessToken = $credentials->getAccessToken();
+        return $credentials->getAccessToken();
     }
 }

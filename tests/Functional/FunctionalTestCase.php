@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 abstract class FunctionalTestCase extends TestCase
 {
-    protected function getClient(): ?HelloassoClient
+    protected function getClient(): HelloassoClient
     {
         $clientId = getenv('HELLOASSO_CLIENT_ID');
         $clientSecret = getenv('HELLOASSO_CLIENT_SECRET');

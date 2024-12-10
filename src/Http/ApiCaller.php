@@ -30,6 +30,12 @@ class ApiCaller
      */
     public function post(string $url, array|HelloassoObject|null $body, string $responseClassType, ?array $options = []): HelloassoObject
     {
+        if (null === $options) {
+            @trigger_error(__METHOD__.'(): Passing null for $options is deprecated and will be removed in v2.0.0', \E_USER_DEPRECATED);
+
+            $options = [];
+        }
+
         $response = $this->httpClient->request(Request::METHOD_POST, $url, array_merge([
             'auth_bearer' => $this->tokenManager->getAccessToken(),
             'body' => $this->serializer->serialize($body, 'json'),
@@ -48,6 +54,12 @@ class ApiCaller
      */
     public function get(string $url, string $responseClassType, ?array $options = []): HelloassoObject
     {
+        if (null === $options) {
+            @trigger_error(__METHOD__.'(): Passing null for $options is deprecated and will be removed in v2.0.0', \E_USER_DEPRECATED);
+
+            $options = [];
+        }
+
         $response = $this->httpClient->request(Request::METHOD_GET, $url, array_merge([
             'auth_bearer' => $this->tokenManager->getAccessToken(),
         ], $options));
