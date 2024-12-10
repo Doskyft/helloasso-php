@@ -39,6 +39,7 @@ class HelloassoClient
     public function decodeEvent(string $eventData): Event
     {
         try {
+            /** @var array{eventType?: string, data?: array<string, mixed>, metadata?: array<string, mixed>} */
             $event = json_decode($eventData, true, 512, \JSON_THROW_ON_ERROR);
         } catch (\JsonException $e) {
             throw new InvalidValueException('Unable to json_decode given event.');

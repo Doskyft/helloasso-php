@@ -2,7 +2,7 @@ includes:
     - ./tools/phpstan/vendor/phpstan/phpstan-symfony/extension.neon
 
 parameters:
-    level: 8
+    level: max
     paths:
       - src
       - tests
