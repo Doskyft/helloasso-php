@@ -64,7 +64,7 @@ class InitCheckoutBody implements HelloassoObject
     /**
      * @var array<CheckoutTerm> Tableau contenant les échéances éventuelles
      */
-    private ?array $terms;
+    private array $terms = [];
 
     /**
      * Informations concernant le payeur.
@@ -84,7 +84,7 @@ class InitCheckoutBody implements HelloassoObject
      *
      * @example 101
      */
-    private ?string $trackingParameter;
+    private ?string $trackingParameter = null;
 
     public function getTotalAmount(): int
     {
@@ -192,9 +192,9 @@ class InitCheckoutBody implements HelloassoObject
     }
 
     /**
-     * @return array<CheckoutTerm>|null
+     * @return array<CheckoutTerm>
      */
-    public function getTerms(): ?array
+    public function getTerms(): array
     {
         return $this->terms;
     }

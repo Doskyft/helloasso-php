@@ -53,6 +53,9 @@ class ResponseHandler
      */
     public function deserializeResponseContent(string $content, string $responseClassType): HelloassoObject
     {
-        return $this->serializer->deserialize($content, $responseClassType, 'json');
+        /** @var T $object */
+        $object = $this->serializer->deserialize($content, $responseClassType, 'json');
+
+        return $object;
     }
 }
