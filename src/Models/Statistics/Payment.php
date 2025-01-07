@@ -60,11 +60,17 @@ class Payment implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return PaymentItem[]
+     */
     public function getItems(): array
     {
         return $this->items;
     }
 
+    /**
+     * @param PaymentItem[] $items
+     */
     public function setItems(array $items): self
     {
         $this->items = $items;

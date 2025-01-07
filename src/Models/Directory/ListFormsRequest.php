@@ -121,11 +121,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getFormZipCodes(): array
     {
         return $this->formZipCodes;
     }
 
+    /**
+     * @param string[] $formZipCodes
+     */
     public function setFormZipCodes(array $formZipCodes): self
     {
         $this->formZipCodes = $formZipCodes;
@@ -133,11 +139,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getFormCities(): array
     {
         return $this->formCities;
     }
 
+    /**
+     * @param string[] $formCities
+     */
     public function setFormCities(array $formCities): self
     {
         $this->formCities = $formCities;
@@ -145,11 +157,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getFormRegions(): array
     {
         return $this->formRegions;
     }
 
+    /**
+     * @param string[] $formRegions
+     */
     public function setFormRegions(array $formRegions): self
     {
         $this->formRegions = $formRegions;
@@ -157,11 +175,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getFormDepartments(): array
     {
         return $this->formDepartments;
     }
 
+    /**
+     * @param string[] $formDepartments
+     */
     public function setFormDepartments(array $formDepartments): self
     {
         $this->formDepartments = $formDepartments;
@@ -169,11 +193,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getFormCountries(): array
     {
         return $this->formCountries;
     }
 
+    /**
+     * @param string[] $formCountries
+     */
     public function setFormCountries(array $formCountries): self
     {
         $this->formCountries = $formCountries;
@@ -181,11 +211,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getFormTypes(): array
     {
         return $this->formTypes;
     }
 
+    /**
+     * @param string[] $formTypes
+     */
     public function setFormTypes(array $formTypes): self
     {
         $this->formTypes = $formTypes;
@@ -325,11 +361,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getOrganizationCategories(): array
     {
         return $this->organizationCategories;
     }
 
+    /**
+     * @param string[] $organizationCategories
+     */
     public function setOrganizationCategories(array $organizationCategories): self
     {
         $this->organizationCategories = $organizationCategories;
@@ -337,11 +379,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getOrganizationTypes(): array
     {
         return $this->organizationTypes;
     }
 
+    /**
+     * @param string[] $organizationTypes
+     */
     public function setOrganizationTypes(array $organizationTypes): self
     {
         $this->organizationTypes = $organizationTypes;
@@ -349,11 +397,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getOrganizationZipCodes(): array
     {
         return $this->organizationZipCodes;
     }
 
+    /**
+     * @param string[] $organizationZipCodes
+     */
     public function setOrganizationZipCodes(array $organizationZipCodes): self
     {
         $this->organizationZipCodes = $organizationZipCodes;
@@ -361,11 +415,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getOrganizationCities(): array
     {
         return $this->organizationCities;
     }
 
+    /**
+     * @param string[] $organizationCities
+     */
     public function setOrganizationCities(array $organizationCities): self
     {
         $this->organizationCities = $organizationCities;
@@ -373,11 +433,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getOrganizationRegions(): array
     {
         return $this->organizationRegions;
     }
 
+    /**
+     * @param string[] $organizationRegions
+     */
     public function setOrganizationRegions(array $organizationRegions): self
     {
         $this->organizationRegions = $organizationRegions;
@@ -385,11 +451,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getOrganizationDepartments(): array
     {
         return $this->organizationDepartments;
     }
 
+    /**
+     * @param string[] $organizationDepartments
+     */
     public function setOrganizationDepartments(array $organizationDepartments): self
     {
         $this->organizationDepartments = $organizationDepartments;
@@ -409,11 +481,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getInternalTags(): array
     {
         return $this->internalTags;
     }
 
+    /**
+     * @param string[] $internalTags
+     */
     public function setInternalTags(array $internalTags): self
     {
         $this->internalTags = $internalTags;
@@ -421,11 +499,17 @@ class ListFormsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getTags(): array
     {
         return $this->tags;
     }
 
+    /**
+     * @param string[] $tags
+     */
     public function setTags(array $tags): self
     {
         $this->tags = $tags;

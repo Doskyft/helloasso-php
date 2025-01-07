@@ -88,11 +88,17 @@ class ListOrganizationsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getCategories(): array
     {
         return $this->categories;
     }
 
+    /**
+     * @param string[] $categories
+     */
     public function setCategories(array $categories): self
     {
         $this->categories = $categories;
@@ -100,11 +106,17 @@ class ListOrganizationsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getTypes(): array
     {
         return $this->types;
     }
 
+    /**
+     * @param string[] $types
+     */
     public function setTypes(array $types): self
     {
         $this->types = $types;
@@ -112,11 +124,17 @@ class ListOrganizationsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getZipCodes(): array
     {
         return $this->zipCodes;
     }
 
+    /**
+     * @param string[] $zipCodes
+     */
     public function setZipCodes(array $zipCodes): self
     {
         $this->zipCodes = $zipCodes;
@@ -124,11 +142,17 @@ class ListOrganizationsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getCities(): array
     {
         return $this->cities;
     }
 
+    /**
+     * @param string[] $cities
+     */
     public function setCities(array $cities): self
     {
         $this->cities = $cities;
@@ -136,11 +160,17 @@ class ListOrganizationsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getRegions(): array
     {
         return $this->regions;
     }
 
+    /**
+     * @param string[] $regions
+     */
     public function setRegions(array $regions): self
     {
         $this->regions = $regions;
@@ -148,11 +178,17 @@ class ListOrganizationsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getDepartments(): array
     {
         return $this->departments;
     }
 
+    /**
+     * @param string[] $departments
+     */
     public function setDepartments(array $departments): self
     {
         $this->departments = $departments;
@@ -160,11 +196,17 @@ class ListOrganizationsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getInternalTags(): array
     {
         return $this->internalTags;
     }
 
+    /**
+     * @param string[] $internalTags
+     */
     public function setInternalTags(array $internalTags): self
     {
         $this->internalTags = $internalTags;
@@ -172,11 +214,17 @@ class ListOrganizationsRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getTags(): array
     {
         return $this->tags;
     }
 
+    /**
+     * @param string[] $tags
+     */
     public function setTags(array $tags): self
     {
         $this->tags = $tags;

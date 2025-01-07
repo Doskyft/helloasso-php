@@ -33,6 +33,8 @@ abstract class Collection implements HelloassoObject
 
     /**
      * @param T[] $data
+     *
+     * @return self<T>
      */
     public function setData(array $data): self
     {
@@ -46,6 +48,9 @@ abstract class Collection implements HelloassoObject
         return $this->pagination;
     }
 
+    /**
+     * @return self<T>
+     */
     public function setPagination(PaginationModel $pagination): self
     {
         $this->pagination = $pagination;

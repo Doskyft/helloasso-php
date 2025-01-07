@@ -21,6 +21,9 @@ class Event implements HelloassoObject
 
     private PaymentDetail|OrderDetail|FormPublicModel $data;
 
+    /**
+     * @var array<string, mixed>
+     */
     private array $metadata;
 
     public function getEventType(): string
@@ -47,11 +50,17 @@ class Event implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getMetadata(): array
     {
         return $this->metadata;
     }
 
+    /**
+     * @param array<string, mixed> $metadata
+     */
     public function setMetadata(array $metadata): self
     {
         $this->metadata = $metadata;

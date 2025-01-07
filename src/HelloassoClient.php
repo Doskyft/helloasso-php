@@ -14,7 +14,6 @@ use Helloasso\Service\CheckoutIntentService;
 use Helloasso\Service\DirectoryService;
 use Helloasso\Service\PaymentService;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 class HelloassoClient
 {
@@ -23,7 +22,7 @@ class HelloassoClient
     public DirectoryService $directory;
 
     public function __construct(
-        private readonly SerializerInterface|DenormalizerInterface $serializer,
+        private readonly DenormalizerInterface $serializer,
         ApiCaller $apiCaller,
         string $organizationSlug,
     ) {
@@ -40,6 +39,7 @@ class HelloassoClient
     public function decodeEvent(string $eventData): Event
     {
         try {
+            /** @var array{eventType?: string, data?: array<string, mixed>, metadata?: array<string, mixed>} */
             $event = json_decode($eventData, true, 512, \JSON_THROW_ON_ERROR);
         } catch (\JsonException $e) {
             throw new InvalidValueException('Unable to json_decode given event.');
@@ -59,7 +59,7 @@ class HelloassoClient
             Event::EVENT_TYPE_FORM => FormPublicModel::class,
             Event::EVENT_TYPE_ORDER => OrderDetail::class,
             Event::EVENT_TYPE_PAYMENT => PaymentDetail::class,
-            default => throw new InvalidValueException('eventType "'.$eventType.'" not supported')
+            default => throw new InvalidValueException('eventType "'.$eventType.'" not supported'),
         };
 
         return (new Event())

@@ -70,11 +70,17 @@ class FormPublicModel implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return TierPublicModel[]
+     */
     public function getTiers(): array
     {
         return $this->tiers;
     }
 
+    /**
+     * @param TierPublicModel[] $tiers
+     */
     public function setTiers(array $tiers): self
     {
         $this->tiers = $tiers;

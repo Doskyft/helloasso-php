@@ -70,11 +70,17 @@ class Item implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return ItemPayment[]
+     */
     public function getPayments(): array
     {
         return $this->payments;
     }
 
+    /**
+     * @param ItemPayment[] $payments
+     */
     public function setPayments(array $payments): self
     {
         $this->payments = $payments;
@@ -142,11 +148,17 @@ class Item implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return ItemCustomField[]
+     */
     public function getCustomFields(): array
     {
         return $this->customFields;
     }
 
+    /**
+     * @param ItemCustomField[] $customFields
+     */
     public function setCustomFields(array $customFields): self
     {
         $this->customFields = $customFields;
@@ -154,11 +166,17 @@ class Item implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return ItemOption[]
+     */
     public function getOptions(): array
     {
         return $this->options;
     }
 
+    /**
+     * @param ItemOption[] $options
+     */
     public function setOptions(array $options): self
     {
         $this->options = $options;

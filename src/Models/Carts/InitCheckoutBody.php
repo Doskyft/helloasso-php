@@ -64,7 +64,7 @@ class InitCheckoutBody implements HelloassoObject
     /**
      * @var array<CheckoutTerm> Tableau contenant les échéances éventuelles
      */
-    private ?array $terms;
+    private array $terms = [];
 
     /**
      * Informations concernant le payeur.
@@ -72,10 +72,10 @@ class InitCheckoutBody implements HelloassoObject
     private ?CheckoutPayer $payer;
 
     /**
-     * @var array<array> Informations partenaire.
-     *                   Ces infos ne seront pas transmises à l’association ou au contributeur.
-     *                   Elles vous seront renvoyées avec la commande ou le paiement lors de la notification,
-     *                   ou quand vous voudrez récupérer le détail du paiement ou de la commande.
+     * @var array<string, mixed> Informations partenaire.
+     *                           Ces infos ne seront pas transmises à l’association ou au contributeur.
+     *                           Elles vous seront renvoyées avec la commande ou le paiement lors de la notification,
+     *                           ou quand vous voudrez récupérer le détail du paiement ou de la commande.
      */
     private array $metadata;
 
@@ -84,7 +84,7 @@ class InitCheckoutBody implements HelloassoObject
      *
      * @example 101
      */
-    private ?string $trackingParameter;
+    private ?string $trackingParameter = null;
 
     public function getTotalAmount(): int
     {
@@ -192,9 +192,9 @@ class InitCheckoutBody implements HelloassoObject
     }
 
     /**
-     * @return array<CheckoutTerm>|null
+     * @return array<CheckoutTerm>
      */
-    public function getTerms(): ?array
+    public function getTerms(): array
     {
         return $this->terms;
     }
@@ -218,11 +218,17 @@ class InitCheckoutBody implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getMetadata(): array
     {
         return $this->metadata;
     }
 
+    /**
+     * @param array<string, mixed> $metadata
+     */
     public function setMetadata(array $metadata): self
     {
         $this->metadata = $metadata;

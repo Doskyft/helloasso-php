@@ -55,11 +55,17 @@ class FormQuickCreateRequest implements HelloassoObject
     private string $projectTargetCountry;
     private int $maxEntries;
 
+    /**
+     * @return TierLightModel[]
+     */
     public function getTierList(): array
     {
         return $this->tierList;
     }
 
+    /**
+     * @param TierLightModel[] $tierList
+     */
     public function setTierList(array $tierList): self
     {
         $this->tierList = $tierList;
@@ -379,11 +385,17 @@ class FormQuickCreateRequest implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return int[]
+     */
     public function getOpenDonationPresetAmounts(): array
     {
         return $this->openDonationPresetAmounts;
     }
 
+    /**
+     * @param int[] $openDonationPresetAmounts
+     */
     public function setOpenDonationPresetAmounts(array $openDonationPresetAmounts): self
     {
         $this->openDonationPresetAmounts = $openDonationPresetAmounts;

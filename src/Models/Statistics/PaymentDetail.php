@@ -76,6 +76,9 @@ class PaymentDetail implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return PaymentItem[]
+     */
     public function getItems(): array
     {
         return $this->items;
@@ -88,6 +91,9 @@ class PaymentDetail implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @param PaymentItem[] $items
+     */
     public function setItems(array $items): self
     {
         $this->items = $items;

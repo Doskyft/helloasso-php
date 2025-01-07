@@ -55,11 +55,17 @@ class ApiClientModel implements HelloassoObject
         return $this;
     }
 
+    /**
+     * @return string[]
+     */
     public function getPrivileges(): array
     {
         return $this->privileges;
     }
 
+    /**
+     * @param string[] $privileges
+     */
     public function setPrivileges(array $privileges): self
     {
         $this->privileges = $privileges;

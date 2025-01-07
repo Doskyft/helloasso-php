@@ -24,7 +24,11 @@ final class HelloAssoClientTest extends TestCase
 
     public function testDecodeOrderEvent(): void
     {
-        $event = $this->client->decodeEvent(file_get_contents(__DIR__.'/../fixtures/event.Order.json'));
+        if (false === $fileContent = file_get_contents(__DIR__.'/../fixtures/event.Order.json')) {
+            $this->fail('Unable to read content from given file');
+        }
+
+        $event = $this->client->decodeEvent($fileContent);
 
         $this->assertInstanceOf(Event::class, $event);
         $this->assertSame('Order', $event->getEventType());
@@ -33,7 +37,11 @@ final class HelloAssoClientTest extends TestCase
 
     public function testDecodePaymentEvent(): void
     {
-        $event = $this->client->decodeEvent(file_get_contents(__DIR__.'/../fixtures/event.Payment.json'));
+        if (false === $fileContent = file_get_contents(__DIR__.'/../fixtures/event.Payment.json')) {
+            $this->fail('Unable to read content from given file');
+        }
+
+        $event = $this->client->decodeEvent($fileContent);
 
         $this->assertInstanceOf(Event::class, $event);
         $this->assertSame('Payment', $event->getEventType());
@@ -42,7 +50,11 @@ final class HelloAssoClientTest extends TestCase
 
     public function testDecodeFormEvent(): void
     {
-        $event = $this->client->decodeEvent(file_get_contents(__DIR__.'/../fixtures/event.Form.json'));
+        if (false === $fileContent = file_get_contents(__DIR__.'/../fixtures/event.Form.json')) {
+            $this->fail('Unable to read content from given file');
+        }
+
+        $event = $this->client->decodeEvent($fileContent);
 
         $this->assertInstanceOf(Event::class, $event);
         $this->assertSame('Form', $event->getEventType());
