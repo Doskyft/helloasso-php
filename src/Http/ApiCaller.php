@@ -9,6 +9,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
+/**
+ * @internal
+ */
 class ApiCaller
 {
     public function __construct(
@@ -23,12 +26,12 @@ class ApiCaller
      * @template T of HelloassoObject
      *
      * @param array<mixed>|HelloassoObject|null $body              The body of the request to make
-     * @param class-string<T>                   $responseClassType
+     * @param ?class-string<T>                  $responseClassType
      * @param array<string, mixed>              $options           HttpClient request options
      *
-     * @return T
+     * @return ($responseClassType is null ? null : T)
      */
-    public function post(string $url, array|HelloassoObject|null $body, string $responseClassType, ?array $options = []): HelloassoObject
+    public function post(string $url, array|HelloassoObject|null $body = null, ?string $responseClassType = null, ?array $options = []): ?HelloassoObject
     {
         if (null === $options) {
             @trigger_error(__METHOD__.'(): Passing null for $options is deprecated and will be removed in v2.0.0', \E_USER_DEPRECATED);
@@ -41,7 +44,13 @@ class ApiCaller
             'body' => $this->serializer->serialize($body, 'json'),
         ], $options));
 
-        return $this->responseHandler->deserializeResponse($response, $responseClassType);
+        $responseContent = $this->responseHandler->getResponseContentOrThrowException($response);
+
+        if (null === $responseClassType) {
+            return null;
+        }
+
+        return $this->responseHandler->deserializeResponseContent($responseContent, $responseClassType);
     }
 
     /**

@@ -20,6 +20,18 @@ class CheckoutTerm implements HelloassoObject
      */
     private \DateTimeInterface $date;
 
+    public function __construct(
+        ?int $amount = null,
+        ?\DateTimeInterface $date = null,
+    ) {
+        if (null !== $amount) {
+            $this->amount = $amount;
+        }
+        if (null !== $date) {
+            $this->date = $date;
+        }
+    }
+
     public function getAmount(): int
     {
         return $this->amount;
