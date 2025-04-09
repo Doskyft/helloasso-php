@@ -6,6 +6,7 @@ namespace Helloasso\Service;
 
 use Helloasso\Exception\HelloassoApiException;
 use Helloasso\Http\ApiCaller;
+use Helloasso\Models\Payments\Refund;
 use Helloasso\Models\Statistics\Payment;
 use Helloasso\Models\Statistics\PaymentCollection;
 
@@ -42,9 +43,9 @@ class PaymentService
      *
      * @throws HelloassoApiException
      */
-    public function refund(int $id, array $params = []): Payment
+    public function refund(int $id, array $params = []): Refund
     {
-        return $this->apiCaller->post("/v5/payments/$id/refund", null, Payment::class, [
+        return $this->apiCaller->post("/v5/payments/$id/refund", null, Refund::class, [
             'query' => $params,
         ]);
     }

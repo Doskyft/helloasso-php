@@ -14,12 +14,16 @@ abstract class FunctionalTestCase extends TestCase
     {
         $clientId = getenv('HELLOASSO_CLIENT_ID');
         $clientSecret = getenv('HELLOASSO_CLIENT_SECRET');
-        $organisationSlug = false !== getenv('HELLOASSO_ORGANISATION') ? getenv('HELLOASSO_ORGANISATION') : 'helloasso-php-sdk';
 
         if (empty($clientId) || empty($clientSecret)) {
             $this->markTestSkipped();
         }
 
-        return HelloassoClientFactory::create($clientId, $clientSecret, $organisationSlug, true);
+        return HelloassoClientFactory::create($clientId, $clientSecret, $this->getOrganisationSlug(), true);
+    }
+
+    protected function getOrganisationSlug(): string
+    {
+        return false !== getenv('HELLOASSO_ORGANISATION') ? getenv('HELLOASSO_ORGANISATION') : 'helloasso-php-sdk';
     }
 }

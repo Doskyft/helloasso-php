@@ -11,11 +11,32 @@ use Symfony\Contracts\HttpClient\Exception\HttpExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
+/**
+ * @internal
+ */
 class ResponseHandler
 {
     public function __construct(
         private readonly Serializer $serializer,
     ) {
+    }
+
+    /**
+     * @throws HelloassoApiException
+     */
+    public function getResponseContentOrThrowException(ResponseInterface $response): string
+    {
+        try {
+            return $response->getContent();
+        } catch (HttpExceptionInterface|TransportExceptionInterface $e) {
+            try {
+                $content = $response->getContent(false);
+            } catch (HttpExceptionInterface|TransportExceptionInterface $e) {
+                $content = 'unknown error';
+            }
+
+            throw new HelloassoApiException($e->getMessage().' : '.$content);
+        }
     }
 
     /**
@@ -29,17 +50,7 @@ class ResponseHandler
      */
     public function deserializeResponse(ResponseInterface $response, string $responseClassType): HelloassoObject
     {
-        try {
-            $responseContent = $response->getContent();
-        } catch (HttpExceptionInterface|TransportExceptionInterface $e) {
-            try {
-                $content = $response->getContent(false);
-            } catch (HttpExceptionInterface|TransportExceptionInterface $e) {
-                $content = 'unknown error';
-            }
-
-            throw new HelloassoApiException($e->getMessage().' : '.$content);
-        }
+        $responseContent = $this->getResponseContentOrThrowException($response);
 
         return $this->deserializeResponseContent($responseContent, $responseClassType);
     }

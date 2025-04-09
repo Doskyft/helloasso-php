@@ -57,6 +57,18 @@ $helloassoClient->checkout->create($checkoutIntent);
 [Voir la documentation](https://api.helloasso.com/v5/swagger/ui/index#/Checkout%20intents%20management/OrganizationCheckoutIntents_PostInitCheckout)
 </details>
 
+### Order
+
+<details>
+
+<summary>Annuler une commande (Order)</summary>
+
+```php
+$helloassoClient->order->cancel($orderId);
+```
+[Voir la documentation](https://dev.helloasso.com/reference/post_orders-orderid-cancel)
+</details>
+
 ### Évènements
 
 <details>
@@ -76,7 +88,7 @@ Ce projet inclut des tests fonctionnels qui nécessitent un accès à [la sandbo
 
 Pour lancer les tests :
 
-    HELLOASSO_CLIENT_ID=[YourClientId] HELLOASSO_CLIENT_SECRET=[YourClientSecret] HELLOASSO_ORGANISATION_SLUG=[YourOrganisation] vendor/bin/phpunit
+    HELLOASSO_CLIENT_ID=[YourClientId] HELLOASSO_CLIENT_SECRET=[YourClientSecret] HELLOASSO_ORGANISATION=[YourOrganisation] vendor/bin/phpunit
 
 ## Contributeurs
 
