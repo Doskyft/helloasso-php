@@ -30,4 +30,6 @@ enum PaymentState: string
     case Contested = 'Contested';
 
     case Canceled = 'Canceled';
+
+    case Init = 'Init';
 }
