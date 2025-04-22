@@ -31,7 +31,7 @@ class HelloassoClient
         $this->checkout = new CheckoutIntentService($apiCaller, $organizationSlug);
         $this->directory = new DirectoryService();
         $this->payment = new PaymentService($apiCaller, $organizationSlug);
-        $this->order = new OrderService($apiCaller);
+        $this->order = new OrderService($apiCaller, $organizationSlug);
     }
 
     /**
