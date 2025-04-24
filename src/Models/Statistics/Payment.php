@@ -11,6 +11,7 @@ use Helloasso\Enums\PaymentState;
 use Helloasso\Enums\PaymentType;
 use Helloasso\Models\Common\MetaModel;
 use Helloasso\Models\HelloassoObject;
+use Helloasso\Models\Payments\RefundOperation;
 
 class Payment implements HelloassoObject
 {
@@ -35,6 +36,11 @@ class Payment implements HelloassoObject
     private PaymentType $type;
     private MetaModel $meta;
     private PaymentOffLineMeansModel $paymentOffLineMean;
+
+    /**
+     * @var array<RefundOperation>
+     */
+    private array $refundOperations;
 
     public function getOrder(): OrderLight
     {
@@ -230,6 +236,24 @@ class Payment implements HelloassoObject
     public function setPaymentOffLineMean(PaymentOffLineMeansModel $paymentOffLineMean): self
     {
         $this->paymentOffLineMean = $paymentOffLineMean;
+
+        return $this;
+    }
+
+    /**
+     * @return RefundOperation[]
+     */
+    public function getRefundOperations(): array
+    {
+        return $this->refundOperations;
+    }
+
+    /**
+     * @param RefundOperation[] $refundOperations
+     */
+    public function setRefundOperations(array $refundOperations): self
+    {
+        $this->refundOperations = $refundOperations;
 
         return $this;
     }
