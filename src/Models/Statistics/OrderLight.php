@@ -20,6 +20,8 @@ class OrderLight implements HelloassoObject
     private FormType $formType;
     private MetaModel $meta;
 
+    private ?int $checkoutIntentId = null;
+
     public function getId(): int
     {
         return $this->id;
@@ -100,6 +102,18 @@ class OrderLight implements HelloassoObject
     public function setMeta(MetaModel $meta): self
     {
         $this->meta = $meta;
+
+        return $this;
+    }
+
+    public function getCheckoutIntentId(): ?int
+    {
+        return $this->checkoutIntentId;
+    }
+
+    public function setCheckoutIntentId(?int $checkoutIntentId): self
+    {
+        $this->checkoutIntentId = $checkoutIntentId;
 
         return $this;
     }
