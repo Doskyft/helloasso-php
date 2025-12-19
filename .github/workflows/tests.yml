@@ -9,20 +9,23 @@ jobs:
     strategy:
       matrix:
         include:
-          # Lowest deps (PHP 8.1 & sf 6.4)
-          - php: 8.1
+          # Lowest deps (PHP 8.2 & sf 6.4)
+          - php: 8.2
             symfony-require: 6.4.*
             composer-flags: '--prefer-stable --prefer-lowest'
           # Normal deps with different php versions
-          - php: 8.2
-            symfony-require: 7.0.*
-            composer-flags: '--prefer-stable'
           - php: 8.3
-            symfony-require: 7.0.*
+            symfony-require: 7.4.*
+            composer-flags: '--prefer-stable'
+          - php: 8.4
+            symfony-require: 8.0.*
+            composer-flags: '--prefer-stable'
+          - php: 8.5
+            symfony-require: 8.0.*
             composer-flags: '--prefer-stable'
           # Development release
           - php: nightly
-            symfony-require: 7.1.*@dev
+            symfony-require: 8.0.*@dev
             stability: dev
             can-fail: true
       fail-fast: false
